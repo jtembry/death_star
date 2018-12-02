@@ -1,17 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
-
-div.card-header {
- font-size: large;
+@font-face {
+    font-family: Inconsolata-Bold;
+    src: url(assets/fonts/Inconsolata-Bold.ttf)
 }
-
-div.card {
-  margin-top: 10px
+@font-face {
+    font-family: Inconsolata-Regular;
+    src: url(assets/fonts/Inconsolata-Regular.ttf)
 }
 
 .table {
   margin-top: 10px
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+html, body {
+  background: url('./assets/images/SkySurveyBanner.jpg') no-repeat;
+  background-size: 100%;
+  height: 100%
+}
+
+.code-style-bold {
+    font-family: 'Inconsolata-Bold', serif;
+}
+
+.code-style-regular {
+    font-family: 'Inconsolata-Regular', serif;
+}
+
+.dark {
+    background-color: black;
+}
+
+.title, .title:focus {
+  font-family: 'Inconsolata-Bold', serif;
+  color: crimson;
+  outline: none
+}
+
+ .menu, .menu:focus {
+   color: goldenrod;
+   outline: none
+ }
+
+

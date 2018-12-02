@@ -27,7 +27,6 @@ export class QuoteListComponent implements OnInit {
   quotes: IQuote[] = [];
 
   constructor(private quoteService: QuoteService) {
-
   }
 
   onRatingClicked(message: string): void {

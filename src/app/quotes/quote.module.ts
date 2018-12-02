@@ -3,7 +3,7 @@ import { RouterModule, Routes} from '@angular/router';
 import { QuoteListComponent } from './quote-list.component';
 import { ConvertToSpacesPipe } from '../shared/convert-to-spaces.pipe';
 import { SharedModule } from '../shared/shared.module';
-import { MaterialsModule} from '../shared/material.module';
+import { MaterialImports } from '../shared/material-exports';
 
 const appRoutes: Routes = [
   {  path: 'quotes', component: QuoteListComponent }
@@ -16,7 +16,7 @@ const appRoutes: Routes = [
       { enableTracing: true }
       ),
     SharedModule,
-    MaterialsModule
+    ...MaterialImports
   ],
   declarations: [
     QuoteListComponent,

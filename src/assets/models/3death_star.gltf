@@ -1,0 +1,147 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 472296,
+            "max" : [
+                314859
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 314860,
+            "max" : [
+                2.017306089401245,
+                2.031141519546509,
+                2.012800931930542
+            ],
+            "min" : [
+                -2.002685308456421,
+                -1.9888583421707153,
+                -2.010448455810547
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 314860,
+            "max" : [
+                0.9998967051506042,
+                0.9999964237213135,
+                0.999778151512146
+            ],
+            "min" : [
+                -0.9997782111167908,
+                -0.9999995827674866,
+                -0.9997782111167908
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1889184,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3778320,
+            "byteOffset" : 1889184,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3778320,
+            "byteOffset" : 5667504,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 9445824,
+            "uri" : "3death_star.bin"
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "MASK",
+            "name" : "Material.001",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.002727697457785866,
+                    0.800000011920929,
+                    0.020236885849191033,
+                    1.0
+                ],
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.005",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.007802897598594427,
+                0.716890275478363,
+                -0.6970961689949036,
+                0.00802350603044033
+            ],
+            "translation" : [
+                0.10451455414295197,
+                0.7493478059768677,
+                -10.719135284423828
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Death Star"
+        },
+        {
+            "name" : "Point",
+            "translation" : [
+                -0.2562636733055115,
+                6.318879127502441,
+                4.2556538581848145
+            ]
+        }
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                2,
+                0,
+                1
+            ]
+        }
+    ]
+}

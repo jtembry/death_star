@@ -1,10 +1,16 @@
-<nav class='navbar navbar-expand navbar-light bg-light'>
-  <a class='navbar-brand'>{{pageTitle}}</a>
-  <ul class='nav nav-pills'>
-    <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
-    <li><a class='nav-link' [routerLink]="['/quotes']">Quote List</a></li>
-  </ul>
-</nav>
-<div class='container'>
-  <router-outlet></router-outlet>
+<div class="navbar-dark title">
+<button mat-icon-button class="menu" [matMenuTriggerFor]="appMenu">
+  <mat-icon>menu</mat-icon>
+</button>
+    // <{{pageTitle}}>
 </div>
+<mat-menu #appMenu='matMenu' class="title">
+    <button mat-menu-item class="title" [routerLink]="['/home']">Home</button>
+    <button mat-menu-item class="title" [routerLink]="['/quotes']">Quotes</button>
+</mat-menu>
+<router-outlet></router-outlet>
+<div class="text-center title">Developed by:</div>
+<div class="text-center title">
+    <h3>JT Embry</h3>
+</div>
+
