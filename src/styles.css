@@ -14,9 +14,10 @@
   margin-top: 10px
 }
 html, body {
-  background: url('./assets/images/SkySurveyBanner.jpg') no-repeat;
-  background-size: 100%;
-  height: 100%
+  background: url('./assets/images/SkySurveyBanner.jpg');
+  background-size: cover;
+  height: auto;
+  width: 100%
 }
 
 .code-style-bold {
@@ -35,6 +36,13 @@ html, body {
   font-family: 'Inconsolata-Bold', serif;
   color: crimson;
   outline: none
+}
+
+.card-footer {
+  color: crimson;
+  bottom: 0px;
+  height: 10%;
+  display: block;
 }
 
  .menu, .menu:focus {

@@ -1,6 +1,7 @@
 import {Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import * as THREE from 'three';
-import GLTFLoader from 'three-gltf-loader';
+import {VisualizerService} from './visualizer.service';
+import {WebGLRenderer} from 'three';
+import {partial, get} from 'lodash';
 
 @Component({
   selector: 'pm-visualizer',
@@ -14,21 +15,35 @@ export class VisualizerComponent implements OnInit {
   // @ViewChild('audio') audioRef: ElementRef;
   // @ViewChild('label.file') labelRef: ElementRef;
   private container: HTMLElement;
-  private scene: THREE.Scene;
-  private camera: THREE.PerspectiveCamera;
-  private renderer: THREE.WebGLRenderer;
-  private death_star: any;
-  constructor() {
+  private renderer: WebGLRenderer;
+  public renderFn: Function = partial((self) => {
+    requestAnimationFrame(self.renderFn);
+    self.renderer.render(self.visualizer.scene, self.visualizer.camera);
+    if (self.visualizer.death_star) {
+      self.visualizer.death_star.rotation.y += .009;
+    }
+  }, this);
+
+  constructor(public visualizer: VisualizerService) {
   }
 
   ngOnInit() {
+    this.visualizer.staging();
+    this.visualizer.buildDeathStar();
+    this.renderer = new WebGLRenderer({antialias: true, alpha: true});
+    this.renderer.shadowMap.enabled = true;
     this.container = this.containerRef.nativeElement;
-    this.startAnimate();
+    this.container.appendChild(this.renderer.domElement);
+    this.adjustCanvas(this.width, this.height);
+    this.renderFn();
   }
 
-  private startAnimate() {
-    this.staging();
-    this.render();
+  public get width() {
+    return window.innerWidth;
+  }
+
+  public get height() {
+    return window.innerHeight - 50;
   }
 
 // Web AUDIO EXAMPLE 1
@@ -45,7 +60,7 @@ export class VisualizerComponent implements OnInit {
   // }
 
   //   Web Audio Ex .2
-  //getAudio() {
+  // getAudio() {
   // const URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
   // const context = new AudioContext();
   // const playButton = document.querySelector('#play');
@@ -68,56 +83,19 @@ export class VisualizerComponent implements OnInit {
   //       source.start();
   //     }
   //   }());
-
-  staging() {
-    // window
-    const self: VisualizerComponent = this;
-    // scene
-    this.scene = new THREE.Scene();
-    this.scene.position.set(0, 0, 0);
-    this.renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    this.renderer.shadowMap.enabled = true;
-    // camera
-    this.camera = new THREE.PerspectiveCamera(45, (15 / 9), 1, 1000);
-    this.camera.position.x = 0;
-    this.camera.position.y = 0;
-    this.camera.position.z = 10;
-    this.camera.lookAt(this.scene.position);
-    this.scene.add(this.camera);
-    // lights
-    const spotLight = new THREE.DirectionalLight(0xffffff, 1.75);
-    spotLight.position.set(0, 0, 1000);
-    spotLight.castShadow = true;
-    this.scene.add(spotLight);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.container.appendChild(this.renderer.domElement);
-    const loader = new GLTFLoader();
-    loader.load('../../assets/models/3death_star.gltf', function (gltf) {
-      const scene = gltf.scene;
-      self.death_star = scene.children[2];
-      console.log(self.death_star);
-      self.scene.add(self.death_star);
-      self.render();
-    });
-  }
-
-  render() {
-    const self: VisualizerComponent = this;
-    (function render() {
-      requestAnimationFrame(render);
-      self.renderer.render(self.scene, self.camera);
-      if (self.death_star) {
-        self.death_star.rotation.y += .009;
-      }
-    }());
-  }
-
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.renderer.setViewport(0, 0, window.innerWidth, window.innerHeight);
-    this.camera.aspect = window.innerWidth / window.innerHeight;
-    this.camera.updateProjectionMatrix();
+    if (this.visualizer.camera !== undefined) {
+      this.renderer.render(this.visualizer.scene, this.visualizer.camera);
+      this.adjustCanvas(this.width, this.height);
+      this.visualizer.camera.updateProjectionMatrix();
+    }
+  }
+
+  adjustCanvas(width, height) {
+    this.renderer.setSize(width, height);
+    this.renderer.setViewport(0, 0, width, height);
+    this.visualizer.camera.aspect = 16 / 9;
   }
 }
 
