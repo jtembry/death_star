@@ -29,10 +29,6 @@ export class QuoteListComponent implements OnInit {
   constructor(private quoteService: QuoteService) {
   }
 
-  onRatingClicked(message: string): void {
-    this.pageTitle = 'Quote List: ' + message;
-  }
-
   performFilter(filterBy: string): IQuote[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.quotes.filter((quote: IQuote) =>

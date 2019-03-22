@@ -1,32 +1,29 @@
-    <mat-card-title>
-      {{pageTitle}}
-    </mat-card-title>
-    <div class='row'>
-      <div class='col-sm-1'>Filter by:</div>
-      <div class='col-sm-7'>
-        <input type='text'
-               [(ngModel)]='listFilter' />
-      </div>
+<div class='container'>
+  <section class="d-flex flex-row">
+    <div class="p-4">Filter by:</div>
+    <div class="p-4">
+      <input type='text' [(ngModel)]='listFilter'/>
     </div>
-
-    <div class='row' *ngIf='listFilter'>
-      <div class='col-md-6'>
+    <div class="p-4" *ngIf='listFilter'>
+      <div class="bg-primary">
         <h4>Filtered by: {{listFilter}}</h4>
       </div>
     </div>
-    <div>
+  </section>
+  <section>
       <div *ngIf='quotes && quotes.length'></div>
         <div *ngFor='let quote of filteredQuotes'>
           <div class="row">
-            <div class="col-sm-6" style="background-color:yellow;">
+            <div class="col bg-secondary">
               {{ quote.meat }}
-              <pm-star [rating]='quote.rating' (ratingClicked)='onRatingClicked($event)'></pm-star>
+              <pm-star [rating]='quote.rating'></pm-star>
             </div>
           </div>
         </div>
-    </div>
+  </section>
 
-<div *ngIf='errorMessage'
+
+  <div *ngIf='errorMessage'
      class='alert alert-danger'>
   Error: {{ errorMessage }}
 </div>

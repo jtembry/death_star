@@ -47,42 +47,18 @@ export class VisualizerComponent implements OnInit {
   }
 
 // Web AUDIO EXAMPLE 1
-  // getAudio() {
-  //   const file = this.theFileRef;
-  //   const audio = this.audioRef;
-  //   const fileLabel = this.labelRef;
-  //   this.container.appendChild(this.renderer.domElement);
-  //   document.onload = function (e) {
-  //     console.log(e);
-  //     audio.play();
-  //     play();
-  //   };
-  // }
+//   getAudio() {
+//     const file = this.theFileRef;
+//     const audio = this.audioRef;
+//     const fileLabel = this.labelRef;
+//     this.container.appendChild(this.renderer.domElement);
+//     document.onload = function (e) {
+//       console.log(e);
+//       audio.play();
+//       play();
+//     };
+//   }
 
-  //   Web Audio Ex .2
-  // getAudio() {
-  // const URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/Yodel_Sound_Effect.mp3';
-  // const context = new AudioContext();
-  // const playButton = document.querySelector('#play');
-  //
-  // let yodelBuffer;
-  //   window.fetch(URL)
-  //   .then(response => response.arrayBuffer())
-  //   .then(arrayBuffer => context.decodeAudioData(arrayBuffer))
-  //   .then(audioBuffer => {
-  //     playButton.disabled = false;
-  //     yodelBuffer = audioBuffer;
-  //   });
-  //
-  //   playButton.onclick = () => play(yodelBuffer);
-  //
-  //   play(audioBuffer) {
-  //       const source = context.createBufferSource();
-  //       source.buffer = audioBuffer;
-  //       source.connect(context.destination);
-  //       source.start();
-  //     }
-  //   }());
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     if (this.visualizer.camera !== undefined) {
@@ -98,10 +74,3 @@ export class VisualizerComponent implements OnInit {
     this.visualizer.camera.aspect = 16 / 9;
   }
 }
-
-//   ngOnDestroy() {
-//     this.unsubscribe.forEach(u => u.unsubscribe());
-//     this.unsubscribe.length = 0;
-//   }
-// }
-

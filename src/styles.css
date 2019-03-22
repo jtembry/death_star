@@ -10,9 +10,6 @@
     src: url(assets/fonts/Inconsolata-Regular.ttf)
 }
 
-.table {
-  margin-top: 10px
-}
 html, body {
   background: url('./assets/images/SkySurveyBanner.jpg');
   background-size: cover;
@@ -49,5 +46,33 @@ html, body {
    color: goldenrod;
    outline: none
  }
+
+/*bg-primary {*/
+/*color: #337AB7;*/
+/*}*/
+/*bg-secondary {*/
+/*color: #32CD32*/
+/*}*/
+/*bg-success {*/
+/*color:*/
+/*}*/
+/*bg-danger {*/
+/*color:*/
+/*}*/
+/*bg-warning {*/
+/*color:*/
+/*}*/
+/*bg-info {*/
+/*color:*/
+/*}*/
+/*bg-dark {*/
+/*color:*/
+/*}*/
+/*bg-white {*/
+/*color:*/
+/*}*/
+/*bg-transparent {*/
+/*color:*/
+/*}*/
 
 
