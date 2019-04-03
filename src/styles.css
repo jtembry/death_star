@@ -3,11 +3,11 @@
 @import "~font-awesome/css/font-awesome.min.css";
 @font-face {
     font-family: Inconsolata-Bold;
-    src: url(assets/fonts/Inconsolata-Bold.ttf)
+    src: url(./assets/fonts/Inconsolata-Bold.ttf)
 }
 @font-face {
     font-family: Inconsolata-Regular;
-    src: url(assets/fonts/Inconsolata-Regular.ttf)
+    src: url(./assets/fonts/Inconsolata-Regular.ttf)
 }
 
 html, body {
