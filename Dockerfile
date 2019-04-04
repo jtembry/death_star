@@ -21,11 +21,11 @@ RUN npm install -g @angular/cli@6.0.8
 # add app
 COPY . /usr/src/app
 
-# set user who runs app in container (by Default Docker runs as root.
-USER node
-
 #Expose Port
 EXPOSE 4200
 
 # start app
 CMD ["ng","serve","--host", "0.0.0.0"]
+
+# set user who runs app in container (by Default Docker runs as root.)
+#USER node
