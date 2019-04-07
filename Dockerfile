@@ -1,5 +1,7 @@
 # base image
-FROM node:11.9.0
+FROM nginx:latest
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY dist /usr/share/nginx/html
 
 # install chrome for protractor tests
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -15,17 +17,21 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /usr/src/app/package.json
+COPY angular.json /usr/src/app/angular.json
+COPY tsconfig.json /usr/src/app/tsconfig.json
 RUN npm install
 RUN npm install -g @angular/cli@6.0.8
 
 # add app
 COPY . /usr/src/app
 
+RUN chmod 777 /usr/src/app/src/assets/fonts
+
 #Expose Port
 EXPOSE 4200
 
 # start app
-CMD ["ng","serve","--host", "0.0.0.0"]
+CMD ["ng","serve"]
 
 # set user who runs app in container (by Default Docker runs as root.)
 #USER node
