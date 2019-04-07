@@ -1,0 +1,7 @@
+<button mat-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #appMenu='matMenu'>
+  <button mat-menu-item [routerLink]="['/home']">Home</button>
+  <button mat-menu-item [routerLink]="['/quotes']">Quotes</button mat-menu-item>
+</mat-menu>

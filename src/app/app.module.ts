@@ -8,24 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VisualizerComponent } from './visualizer/visualizer.component';
 import { SharedModule } from './shared/shared.module';
 import {MaterialImports} from './shared/material-exports';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VisualizerComponent
+    VisualizerComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: VisualizerComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
-    ]),
+    RouterModule,
     QuoteModule,
     BrowserAnimationsModule,
     SharedModule,
-      ...MaterialImports
+    AppRoutingModule
   ],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+@font-face {
+  font-family: Inconsolata-Bold;
+  src: url(./assets/fonts/Inconsolata-Bold.ttf)
+}
+
+@font-face {
+  font-family: Inconsolata-Regular;
+  src: url(./assets/fonts/Inconsolata-Regular.ttf)
+}
+
+html, body {
+  background: url('./assets/images/SkySurveyBanner.jpg');
+  background-size: cover;
+  height: auto;
+  width: 100%
+}
+
+
+

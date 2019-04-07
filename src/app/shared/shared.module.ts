@@ -3,19 +3,28 @@ import { CommonModule } from '@angular/common';
 import { StarComponent } from './star.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialImports } from './material-exports';
-import {MatListModule} from '@angular/material/list';
+import {LayoutComponent} from './layout/layout.component';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {VisualizerComponent} from '../visualizer/visualizer.component';
+import {AppRoutingModule} from '../app-routing.module';
 
 @NgModule({
   imports: [
       CommonModule,
+    MaterialImports,
+    HttpClientModule,
+    AppRoutingModule
   ],
   declarations: [
       StarComponent,
+    LayoutComponent,
   ],
   exports: [
-      StarComponent,
-      CommonModule,
-      FormsModule,
+    StarComponent,
+    CommonModule,
+    FormsModule,
+    LayoutComponent,
   ]
 })
 export class SharedModule { }
