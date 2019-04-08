@@ -17,7 +17,7 @@ import {AppRoutingModule} from '../app-routing.module';
     AppRoutingModule
   ],
   declarations: [
-      StarComponent,
+    StarComponent,
     LayoutComponent,
   ],
   exports: [

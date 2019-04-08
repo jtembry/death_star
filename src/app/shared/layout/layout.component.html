@@ -1,7 +1,24 @@
-<button mat-button [matMenuTriggerFor]="appMenu">
-  <mat-icon>menu</mat-icon>
-</button>
-<mat-menu #appMenu='matMenu'>
-  <button mat-menu-item [routerLink]="['/home']">Home</button>
-  <button mat-menu-item [routerLink]="['/quotes']">Quotes</button mat-menu-item>
-</mat-menu>
+<mat-toolbar>
+  <div class="d-flex flex-row">
+    <div class="p-1 align-self-auto no-outline">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>{{buttonDisplay}}</mat-icon>
+      </button>
+    </div>
+    <div class="pl-5 align align-self-center">
+      <span class="title"> <{{pageTitle}}></span>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+      <button mat-list-item [routerLink]="['/home']"><h6>Home</h6></button>
+      <button mat-list-item [routerLink]="['/quotes']"><h6>Quotes</h6></button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -9,6 +9,7 @@ import { VisualizerComponent } from './visualizer/visualizer.component';
 import { SharedModule } from './shared/shared.module';
 import {MaterialImports} from './shared/material-exports';
 import {AppRoutingModule} from './app-routing.module';
+import {MatToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {AppRoutingModule} from './app-routing.module';
     QuoteModule,
     BrowserAnimationsModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule
   ],
   bootstrap: [AppComponent],
 })

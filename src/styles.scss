@@ -2,6 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 
+
 @font-face {
   font-family: Inconsolata-Bold;
   src: url(./assets/fonts/Inconsolata-Bold.ttf)
@@ -19,5 +20,9 @@ html, body {
   width: 100%
 }
 
+.title {
+  color: crimson;
+  font-family: Inconsolata-Regular, serif;
+}
 
 

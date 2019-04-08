@@ -1,0 +1,26 @@
+//@mixin wireframe-background($light-color, $dark-color){
+//   #background {
+//    margin: 0;
+//    height: 100vh;
+//    width: 100vw;
+//    background: $dark-color;
+//    background-image: url($WIREFRAME_BG), radial-gradient(ellipse at center, $light-color 0%, $dark-color 100%);
+//    background-size: contain;
+//    background-repeat: no-repeat;
+//    background-position: bottom;
+//    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$light-color, endColorstr=$dark-color, GradientType=1);
+//  }
+//}
+//@mixin sith-background() {
+//  #background {
+//    margin: 0;
+//    height: 100vh;
+//    width: 100vw;
+//    background: black;
+//    background-image: url($SITH_BG), radial-gradient(ellipse at center, lighten(black, 25%) 0%, black 100%);
+//    background-size: auto;
+//    background-repeat: no-repeat;
+//    background-position: bottom right;
+//    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=lighten(black, 25%), endColorstr=black, GradientType=1);
+//  }
+//}

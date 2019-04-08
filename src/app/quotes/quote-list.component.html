@@ -1,15 +1,14 @@
 <div class='container'>
-  <section class="d-flex flex-row">
-    <div class="p-4">Filter by:</div>
+  <section class="d-flex flex-row justify-content-center">
+    <div class="p-4" style="color: white">Filter by:</div>
     <div class="p-4">
       <input type='text' [(ngModel)]='listFilter'/>
     </div>
     <div class="p-4" *ngIf='listFilter'>
-      <div class="bg-primary">
-        <h4>Filtered by: {{listFilter}}</h4>
-      </div>
+      <h4 style="color: white">Filtered by: {{listFilter}}</h4>
     </div>
   </section>
+
   <section>
       <div *ngIf='quotes && quotes.length'></div>
         <div *ngFor='let quote of filteredQuotes'>
@@ -23,7 +22,8 @@
   </section>
 
 
-  <div *ngIf='errorMessage'
-     class='alert alert-danger'>
-  Error: {{ errorMessage }}
+  <div *ngIf='errorMessage' class='alert alert-danger'>
+    Error: {{ errorMessage }}
+  </div>
+
 </div>
