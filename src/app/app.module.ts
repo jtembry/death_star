@@ -10,11 +10,15 @@ import { SharedModule } from './shared/shared.module';
 import {MaterialImports} from './shared/material-exports';
 import {AppRoutingModule} from './app-routing.module';
 import {MatToolbarModule} from '@angular/material';
+import { GalleryComponent } from './gallery/gallery.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     VisualizerComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import {MatToolbarModule} from '@angular/material';
     BrowserAnimationsModule,
     SharedModule,
     AppRoutingModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FlexLayoutModule
   ],
   bootstrap: [AppComponent],
 })
