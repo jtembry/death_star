@@ -1,9 +1,6 @@
 .example-container {
-  position: relative;
-  display: block;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: fixed;
+  top: 8%;
 }
 
 .mat-list-item {
@@ -15,5 +12,9 @@
   outline: none;
 }
 
-
-
+.toolbar {
+  background-color: aliceblue;
+  width: 100%;
+  position: relative;
+  display: block;
+}

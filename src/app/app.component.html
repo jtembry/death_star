@@ -1,4 +1,23 @@
-<!--todo: encapsulate router outlet-->
-<pm-layout>
-</pm-layout>
+<mat-toolbar>
+  <span class="align-self-auto no-outline">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>{{buttonDisplay}}</mat-icon>
+    </button>
+  </span>
+  <div class="pl-5 align align-self-center">
+    <span class="title"> <{{pageTitle}}></span>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav class="example-container" #sidenav mode="over">
+    <mat-nav-list>
+      <button mat-list-item [routerLink]="['/home']">Home</button>
+      <button mat-list-item [routerLink]="['/gallery']">Gallery</button>
+      <button mat-list-item [routerLink]="['/quotes']">Quotes</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 

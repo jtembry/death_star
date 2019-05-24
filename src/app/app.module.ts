@@ -10,8 +10,9 @@ import { SharedModule } from './shared/shared.module';
 import {MaterialImports} from './shared/material-exports';
 import {AppRoutingModule} from './app-routing.module';
 import {MatToolbarModule} from '@angular/material';
-import { GalleryComponent } from './gallery/gallery.component';
+import {GalleryComponent } from './gallery/gallery.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     SharedModule,
     AppRoutingModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MaterialImports
   ],
   bootstrap: [AppComponent],
 })
