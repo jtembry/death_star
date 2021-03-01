@@ -31,7 +31,7 @@
     "request-promise-native": "^1.0.5",
     "rxjs": "^6.5.2",
     "sdp-transform": "^2.4.1",
-    "three": "^0.98.0",
+    "three": "^0.125.0",
     "three-gltf-loader": "^1.103.0",
     "tslib": "^1.9.3",
     "winston": "^3.1.0"
