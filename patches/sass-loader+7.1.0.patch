@@ -1,0 +1,13 @@
+diff --git a/node_modules/sass-loader/lib/loader.js b/node_modules/sass-loader/lib/loader.js
+index d3f30ec..d9bc18d 100644
+--- a/node_modules/sass-loader/lib/loader.js
++++ b/node_modules/sass-loader/lib/loader.js
+@@ -43,7 +43,7 @@ function sassLoader(content) {
+         return;
+     }
+ 
+-    const render = getRenderFuncFromSassImpl(options.implementation || require("node-sass"));
++    const render = getRenderFuncFromSassImpl(options.implementation || (() => { try { return require("node-sass"); } catch(e) { return require("sass"); } })());
+ 
+     render(options, (err, result) => {
+         if (err) {
