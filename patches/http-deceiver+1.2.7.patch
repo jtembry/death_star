@@ -1,0 +1,32 @@
+diff --git a/node_modules/http-deceiver/lib/deceiver.js b/node_modules/http-deceiver/lib/deceiver.js
+index 33e14cb..ce40a91 100644
+--- a/node_modules/http-deceiver/lib/deceiver.js
++++ b/node_modules/http-deceiver/lib/deceiver.js
+@@ -18,13 +18,16 @@ var kOnHeaders;
+ var kOnHeadersComplete;
+ var kOnMessageComplete;
+ var kOnBody;
+-if (mode === 'normal' || mode === 'modern') {
+-  HTTPParser = process.binding('http_parser').HTTPParser;
++var _httpParserBinding = null;
++try { _httpParserBinding = process.binding('http_parser'); } catch (e) { /* removed in Node 24 */ }
++
++if (_httpParserBinding && (mode === 'normal' || mode === 'modern')) {
++  HTTPParser = _httpParserBinding.HTTPParser;
+   methods = HTTPParser.methods;
+ 
+   // v6
+   if (!methods)
+-    methods = process.binding('http_parser').methods;
++    methods = _httpParserBinding.methods;
+ 
+   reverseMethods = {};
+ 
+@@ -41,6 +44,7 @@ if (mode === 'normal' || mode === 'modern') {
+   kOnHeadersComplete = 'onHeadersComplete';
+   kOnMessageComplete = 'onMessageComplete';
+   kOnBody = 'onBody';
++  mode = 'old';
+ }
+ 
+ function Deceiver(socket, options) {
