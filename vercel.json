@@ -1,0 +1,7 @@
+{
+  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider npx ng build --prod",
+  "outputDirectory": "dist/APM",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
