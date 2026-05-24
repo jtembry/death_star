@@ -11,6 +11,9 @@
     "postinstall": "patch-package"
   },
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@types/three": "^0.93.8",
     "animate.css": "^3.7.0",
